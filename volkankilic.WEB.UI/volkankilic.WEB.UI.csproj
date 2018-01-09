@@ -226,6 +226,8 @@
     <Content Include="Views\PartialViews\_searchBar.cshtml" />
     <Content Include="Views\PartialViews\_contents.cshtml" />
     <Content Include="Views\PartialViews\_coffeeBox.cshtml" />
+    <Content Include="Views\PartialViews\_mostRead.cshtml" />
+    <Content Include="Views\PartialViews\_mostCommented.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

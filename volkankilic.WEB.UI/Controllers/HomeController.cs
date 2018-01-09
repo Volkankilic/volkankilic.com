@@ -28,5 +28,13 @@ namespace volkankilic.WEB.UI.Controllers
         {
             return PartialView("~/Views/PartialViews/_coffeeBox.cshtml");
         }
+        public PartialViewResult mostRead()
+        {
+            return PartialView("~/Views/PartialViews/_mostRead.cshtml");
+        }
+        public PartialViewResult mostCommented()
+        {
+            return PartialView("~/Views/PartialViews/_mostCommented.cshtml");
+        }
     }
 }

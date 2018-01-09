@@ -23,3 +23,15 @@ myApp.directive('coffeeBox', function () {
         templateUrl: '/home/coffeeBox'
     };
 });
+
+myApp.directive('mostRead', function () {
+    return {
+        templateUrl: '/home/mostRead'
+    };
+});
+
+myApp.directive('mostCommented', function () {
+    return {
+        templateUrl: '/home/mostCommented'
+    };
+});
