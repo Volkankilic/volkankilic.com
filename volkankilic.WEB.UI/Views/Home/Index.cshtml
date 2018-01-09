@@ -1,0 +1,519 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+
+/*
+ CSS for the main interaction
+*/
+.tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.tabset .tab-panel {
+  display: none;
+}
+
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+  display: block;
+}
+
+
+.tabset > label {
+  position: relative;
+  display: inline-block;
+  padding: 15px 15px 25px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
+    font-size:12px;
+}
+
+.tabset > label::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  width: 22px;
+  height: 4px;
+  background: #5f9ea0;
+}
+
+.tabset > label:hover,
+.tabset > input:focus + label {
+  color: #008c90;
+}
+
+.tabset > label:hover::after,
+.tabset > input:focus + label::after,
+.tabset > input:checked + label::after {
+     background: #008c90;
+}
+
+.tabset > input:checked + label {
+  border-color: #ccc;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+
+}
+
+.tab-panel {
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+}
+
+/*
+ Demo purposes only
+*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+
+.tabset {
+  max-width: 65em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.box-info:hover {
+    color: #393E48;
+}
+.box-info {
+    position: relative;
+    padding: 15px;
+    background: #fff;
+    color: #5b5b5b;
+    -webkit-transition: All 0.4s ease;
+    -moz-transition: All 0.4s ease;
+    -o-transition: All 0.4s ease;
+    background:#FFFFFF;
+}
+.box-info .nav-tabs {
+    background: #1B1E24;
+}
+
+.box-info .nav-tabs  li.active  a, .box-info .nav-tabs  li.active  a:hover, .box-info .nav-tabs  li.active  a:focus {
+    cursor: default;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    background-color: #ffffff;
+    color: #1B1E24;
+}
+
+.box-info .nav-tabs  li.active  a i, .box-info .nav-tabs  li.active  a:hover i, .box-info .nav-tabs  li.active  a:focus i {
+    color: #212121;
+}
+.box-info .nav-tabs  li  a i {
+    color: #fff;
+}
+
+.box-info.full .box-footer {
+    padding: 20px 20px 15px 20px;
+}
+
+.box-info .media-list {
+    margin-top:0px;
+}
+
+.box-info .media-list .media {
+    border-bottom: 1px solid #eaeaea;
+}
+
+.box-info .media-list .media .media-object {
+    width: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.avatar {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    white-space: nowrap;
+    border-radius: 1000px;
+    vertical-align: bottom
+}
+
+.avatar i {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-radius: 100%
+}
+
+.avatar img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 0 none;
+    border-radius: 1000px
+}
+
+.avatar-online i {
+    background-color: #4caf50
+}
+
+.avatar-off i {
+    background-color: #616161
+}
+
+.avatar-busy i {
+    background-color: #ff9800
+}
+
+.avatar-away i {
+    background-color: #f44336
+}
+
+.avatar-100 {
+    width: 100px
+}
+
+.avatar-100 i {
+    height: 20px;
+    width: 20px
+}
+
+.avatar-lg {
+    width: 50px
+}
+
+.avatar-lg i {
+    height: 12px;
+    width: 12px
+}
+
+.avatar-sm {
+    width: 30px
+}
+
+.avatar-sm i {
+    height: 8px;
+    width: 8px
+}
+
+.avatar-xs {
+    width: 20px
+}
+
+.avatar-xs i {
+    height: 7px;
+    width: 7px
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid transparent;
+}
+           
+
+                             
+
+</style>
+
+<br /><br />
+<div class="container">
+   
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+
+
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                           
+                            <div class="panel panel-default">
+                            
+                                <div class="panel-body">
+                                   <div search-Bar></div>
+                                </div>
+                               
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                          
+                           <div contents></div>
+                         
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                                  <div coffee-Box></div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                  
+
+                                    <div class="tabset">
+                                        <!-- Tab 1 -->
+                                        <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+                                        <label for="tab1">En Çok Okunanalar</label>
+                                        <!-- Tab 2 -->
+                                        <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+                                        <label for="tab2">En Çok Yorum Yapılanlar</label>
+                                       
+
+                                        <div class="tab-panels">
+                                            <section id="marzen" class="tab-panel">
+                                                        <!-- Begin tab comment and popular posts -->
+                                                        <div class="box-info full">
+                                                         
+                                                                <div class="tab-pane active animated fadeInRight" id="comments">
+                                                                    <!-- Begin scroll wrappper -->
+                                                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 325px;">
+                                                                        <div class="scroll-widget">
+                                                                            <ul class="media-list">
+                                                                                <li class="media">
+                                                                                    <a class="pull-left" href="#fakelink">
+                                                                                        <img class="media-object" src="https://bootdey.com/img/Content/User_for_snippets.png" alt="Avatar">
+                                                                                    </a>
+                                                                                    <div class="media-body">
+                                                                                        <h4 class="media-heading"><a href="#fakelink">John Doe</a> <small>Just now</small></h4>
+                                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="media">
+                                                                                    <a class="pull-left" href="#fakelink">
+                                                                                        <img class="media-object" src="https://bootdey.com/img/Content/user-453533-fdadfd.png" alt="Avatar">
+                                                                                    </a>
+                                                                                    <div class="media-body">
+                                                                                        <h4 class="media-heading"><a href="#fakelink">Agent 007</a> <small>Yesterday at 04:00 AM</small></h4>
+                                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus</p>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="media">
+                                                                                    <a class="pull-left" href="#fakelink">
+                                                                                        <img class="media-object" src="https://bootdey.com/img/Content/Twitter_bird_icon.png" alt="Avatar">
+                                                                                    </a>
+                                                                                    <div class="media-body">
+                                                                                        <h4 class="media-heading"><a href="#fakelink">Twitter man</a> <small>January 17, 2014 05:35 PM</small></h4>
+                                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div><div class="slimScrollBar" style="width: 3px; position: absolute; top: 11px; opacity: 0.4; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; left: 1px; height: 209.5734126984127px; background: rgb(134, 134, 134);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; opacity: 0.3; z-index: 90; left: 1px; background: rgb(51, 51, 51);"></div>
+                                                                    </div><!-- End div .scroll-widget -->
+                                                                    <div class="box-footer">
+                                                                        <p><a href="#fakelink"><i class="fa fa-share"></i> See all comments</a></p>
+                                                                    </div>
+                                                                </div><!-- End div .tab-pane -->
+                                                                                                                        
+                                                        </div><!-- End div .box-info .full -->
+
+                                            </section>
+                                            <section id="rauchbier" class="tab-panel">
+                                             
+
+                                                <!-- Begin tab comment and popular posts -->
+                                                <div class="box-info full">
+
+                                                    <div class="tab-pane active animated fadeInRight" id="comments">
+                                                        <!-- Begin scroll wrappper -->
+                                                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 325px;">
+                                                            <div class="scroll-widget">
+                                                                <ul class="media-list">
+                                                                    <li class="media">
+                                                                        <a class="pull-left" href="#fakelink">
+                                                                            <img class="media-object" src="https://bootdey.com/img/Content/User_for_snippets.png" alt="Avatar">
+                                                                        </a>
+                                                                        <div class="media-body">
+                                                                            <h4 class="media-heading"><a href="#fakelink">John Doe</a> <small>Just now</small></h4>
+                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="media">
+                                                                        <a class="pull-left" href="#fakelink">
+                                                                            <img class="media-object" src="https://bootdey.com/img/Content/user-453533-fdadfd.png" alt="Avatar">
+                                                                        </a>
+                                                                        <div class="media-body">
+                                                                            <h4 class="media-heading"><a href="#fakelink">Agent 007</a> <small>Yesterday at 04:00 AM</small></h4>
+                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="media">
+                                                                        <a class="pull-left" href="#fakelink">
+                                                                            <img class="media-object" src="https://bootdey.com/img/Content/Twitter_bird_icon.png" alt="Avatar">
+                                                                        </a>
+                                                                        <div class="media-body">
+                                                                            <h4 class="media-heading"><a href="#fakelink">Twitter man</a> <small>January 17, 2014 05:35 PM</small></h4>
+                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div><div class="slimScrollBar" style="width: 3px; position: absolute; top: 11px; opacity: 0.4; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; left: 1px; height: 209.5734126984127px; background: rgb(134, 134, 134);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; opacity: 0.3; z-index: 90; left: 1px; background: rgb(51, 51, 51);"></div>
+                                                        </div><!-- End div .scroll-widget -->
+                                                        <div class="box-footer">
+                                                            <p><a href="#fakelink"><i class="fa fa-share"></i> See all comments</a></p>
+                                                        </div>
+                                                    </div><!-- End div .tab-pane -->
+
+                                                </div><!-- End div .box-info .full -->
+
+                                            </section>
+                                         
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                          
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+
+                           
+      <div class="panel" id="messge">
+        <div class="panel-heading">
+          <h3 class="panel-title">Message</h3>
+        </div>
+        <div class="panel-body">
+          <ul class="list-group list-group-full">
+            <li class="list-group-item">
+              <div class="media">
+                <div class="media-left">
+                  <span class="avatar avatar-online">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <i></i>
+                  </span>
+                </div>
+                <div class="media-body">
+                  <h5 class="list-group-item-heading">
+                    <small class="pull-right">3 days ago</small>
+                    Herman Beck
+                  </h5>
+                  <p class="list-group-item-text">Cogitemus tempora tibique probabo...</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="media">
+                <div class="media-left">
+                  <span class="avatar avatar-online">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+                    <i></i>
+                  </span>
+                </div>
+                <div class="media-body">
+                  <h5 class="list-group-item-heading">
+                    <small class="pull-right">3 days ago</small>
+                    Mary Adams
+                  </h5>
+                  <p class="list-group-item-text">Praeter ingenii illa novum...</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="media">
+                <div class="media-left">
+                  <span class="avatar avatar-busy">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                    <i></i>
+                  </span>
+                </div>
+                <div class="media-body">
+                  <h5 class="list-group-item-heading">
+                    <small class="pull-right">3 days ago</small>
+                    Caleb Richards
+                  </h5>
+                  <p class="list-group-item-text">Exquisitis officii tantalo etsi...</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="media">
+                <div class="media-left">
+                  <span class="avatar avatar-off">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="">
+                    <i></i>
+                  </span>
+                </div>
+                <div class="media-body">
+                  <h5 class="list-group-item-heading">
+                    <small class="pull-right">3 days ago</small>
+                    June Lane
+                  </h5>
+                  <p class="list-group-item-text">Artes adamare deorum obiecta...</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+ 
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
