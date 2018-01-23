@@ -12,7 +12,7 @@
 
 
 </head>
-<body style="background-color:#f3f3f3;" ng-app="ngMyApp" ng-controller="ngMyController">
+<body style="background-color:#f3f3f3;"ng-app="ngMyApp" ng-controller="ngMyController">
 
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -21,8 +21,7 @@
         <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
             <div class="mdl-layout__header-row">
                 <span class="android-title mdl-layout-title">
-                    <img class="android-logo-image" src="~/Content/Assets/images/volkankilic.png">
-                   
+                    <img class="android-logo-image" src="images/android-logo.png">
                 </span>
                 <!-- Add spacer, to align navigation to the right in desktop -->
                 <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -44,20 +43,21 @@
                     </nav>
                 </div>
                 <span class="android-mobile-title mdl-layout-title">
-                    <img class="android-logo-image" src="~/Content/Assets/images/volkankilic.png">
+                    <img class="android-logo-image" src="images/android-logo.png">
                 </span>
                 <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
                     <i class="material-icons">more_vert</i>
                 </button>
                 <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-                    <li><a href="@Url.Action("Login","Home")" class="mdl-menu__item">Giriş Yap</a></li>
+                    <li class="mdl-menu__item">Giriş Yap</li>
+                    <li class="mdl-menu__item">Kayıt Ol</li>
                 </ul>
             </div>
         </div>
 
         <div class="android-drawer mdl-layout__drawer">
             <span class="mdl-layout-title">
-                <img class="android-logo-image" src="~/Content/Assets/images/volkankilicbeyaz.png">
+                <img class="android-logo-image" src="images/android-logo-white.png">
             </span>
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link" href="">Anasayfa</a>
@@ -65,7 +65,7 @@
                 <a class="mdl-navigation__link" href="">Soru Sor</a>
 
                 <div class="android-drawer-separator"></div>
-                <a class="mdl-navigation__link" href="@Url.Action("Login","Home")">Giriş Yap</a>
+                <a class="mdl-navigation__link" href="">Giriş Yap</a>
             </nav>
         </div>
 
@@ -115,116 +115,12 @@
                         <a class="android-link mdl-typography--font-light" href="">Privacy Policy</a>
                     </div>
                 </footer>*@
+            @RenderBody()
         </div>
+        
 
-
-        <div class="container" style="margin-top:50px;">
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row">
-
-                        <div class="col-md-8">
-
-
-                            <div class="row">
-                                <div class="col-md-12">
-
-
-
-                                    @RenderBody()
-
-
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
-
-                        <div class="col-md-4">
-
-                            <div class="row">
-                                <div class="col-md-12">
-
-                                    <div coffee-Box></div>
-
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div training-Sets></div>
-                                </div>
-                            </div>
-
-
-
-
-                            <div class="row">
-                                <div class="col-md-12">
-
-                                    <div class="panel panel-default">
-                                        <div class="panel-body">
-
-
-                                            <div class="tabset">
-                                                <!-- Tab 1 -->
-                                                <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
-                                                <label for="tab1">En Çok Okunanalar</label>
-                                                <!-- Tab 2 -->
-                                                <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
-                                                <label for="tab2">En Çok Yorum Yapılanlar</label>
-
-
-                                                <div class="tab-panels">
-                                                    <section id="marzen" class="tab-panel">
-
-                                                        <div most-Read></div>
-
-                                                    </section>
-                                                    <section id="rauchbier" class="tab-panel">
-
-
-                                                        <div most-Commented></div>
-
-                                                    </section>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
-
-                                    <div last-Questions></div>
-
-                                </div>
-                            </div>
-
-
-
-
-
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
+    
     </div>
-
-
-
 
 
 

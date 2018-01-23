@@ -1,9 +1,28 @@
 ﻿var myApp = angular.module("ngMyApp", []);
 myApp.controller("ngMyController", ['$scope', function ($scope) {
-    $scope.myName = "volkan kılıç";
+
+    // LOGIN          
+    $scope.loginSubmitForm = function (isValid) {
+
+        // formun valid olup olmadığna bakılır.
+        if (isValid) {
+            alert('Login Form  tamamen doğru');
+        }
+
+    };
+
+    $scope.registerSubmitForm = function (isValid) {
+
+        // formun valid olup olmadığna bakılır.
+        if (isValid) {
+            alert('Register Form tamamen doğru');
+        }
+
+    };
+  
 }])
 
-
+-
 
 // Directive
 myApp.directive('searchBar', function () {
@@ -33,5 +52,23 @@ myApp.directive('mostRead', function () {
 myApp.directive('mostCommented', function () {
     return {
         templateUrl: '/home/mostCommented'
+    };
+});
+
+myApp.directive('lastQuestions', function () {
+    return {
+        templateUrl: '/home/lastQuestions'
+    };
+});
+
+myApp.directive('contentDetail', function () {
+    return {
+        templateUrl: '/home/contentDetail'
+    };
+});
+
+myApp.directive('trainingSets', function () {
+    return {
+        templateUrl: '/home/trainingSets'
     };
 });

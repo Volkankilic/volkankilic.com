@@ -14,6 +14,22 @@ namespace volkankilic.WEB.UI.Controllers
             return View();
         }
 
+        public ActionResult Details()
+        {
+            return View();
+        }
+
+        public ActionResult Sorular()
+        {
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        #region PartialViews
         public PartialViewResult searchBar()
         {
             return PartialView("~/Views/PartialViews/_searchBar.cshtml");
@@ -36,5 +52,20 @@ namespace volkankilic.WEB.UI.Controllers
         {
             return PartialView("~/Views/PartialViews/_mostCommented.cshtml");
         }
+        public PartialViewResult lastQuestions()
+        {
+            return PartialView("~/Views/PartialViews/_lastQuestions.cshtml");
+        }
+        public PartialViewResult contentDetail()
+        {
+            return PartialView("~/Views/PartialViews/_contentDetail.cshtml");
+        }
+        
+        public PartialViewResult trainingSets()
+        {
+            return PartialView("~/Views/PartialViews/_trainingSets.cshtml");
+        }
+        #endregion
+
     }
 }
